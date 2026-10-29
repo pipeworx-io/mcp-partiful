@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-partiful",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Partiful MCP — public event listings from Partiful's explore pages.",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-partiful": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "partiful"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-partiful.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/partiful",
   "pipeworx": {
-    "sourceHash": "v1-638460840d9bacf70394caca94edb97f99c889c1e31f467fa6632c812f1325ff",
-    "sourceCommit": "8dbe088fb6f9d2c88f934173742329b4e20a67d6"
+    "mode": "gateway",
+    "slug": "partiful",
+    "gatewaySlug": "partiful",
+    "sourceHash": "v1-93a027a5aacdd86c13137e17b651182e00073d188fd164331d1d62a1230d85b8",
+    "sourceCommit": "6bae4cfa7b6a73bbe014dc8820a19c80c842b21e"
   }
 }
